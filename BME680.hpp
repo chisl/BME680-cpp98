@@ -31,11 +31,11 @@ public:
 	/*
 	 * REG STATUS:
 	 * 5.3.1.4
-	 *       In SPI mode complete memory page is accessed using page 0 & page 1.
-	 *       Register spi_mem_page is used for page selection. After power-on, spi_mem_page
-	 *       is in its reset state and page 0(0x00 to 0x7F) will be active. Page1 (0x7F to 0xFF)
-	 *       will be active on setting spi_mem_page. Please refer Table 15 for better
-	 *       understanding. 
+	 * In SPI mode complete memory page is accessed using page 0 & page 1.
+	 * Register spi_mem_page is used for page selection. After power-on, spi_mem_page
+	 * is in its reset state and page 0(0x00 to 0x7F) will be active. Page1 (0x7F to 0xFF)
+	 * will be active on setting spi_mem_page. Please refer Table 15 for better
+	 * understanding.
 	 */
 	struct STATUS
 	{
@@ -84,8 +84,8 @@ public:
 	/*
 	 * REG RESET:
 	 * 5.3.1.5
-	 *       Writing 0xB6 to this register initiates a soft-reset procedure, which has the
-	 *       same effect like power-on reset. The default value stored in this register is 0x00. 
+	 * Writing 0xB6 to this register initiates a soft-reset procedure, which has the
+	 * same effect like power-on reset. The default value stored in this register is 0x00.
 	 */
 	struct RESET
 	{
@@ -122,7 +122,7 @@ public:
 	/*
 	 * REG Id:
 	 * 5.3.1.6
-	 *       Chip id of the device 
+	 * Chip id of the device
 	 */
 	struct Id
 	{
@@ -158,7 +158,7 @@ public:
 	/*
 	 * REG Config:
 	 * 5.3.1.2 Enable SPI 3 wire mode
-	 *       5.3.2.4 IIR filter settings 
+	 * 5.3.2.4 IIR filter settings
 	 */
 	struct Config
 	{
@@ -173,14 +173,14 @@ public:
 		/* Bits filter: */
 		/*
 		 * IIR filter settings
-		 *           IIR filter applies to temperature and pressure data but not to humidity and gas data.
-		 *           The data coming from the ADC are filtered and then loaded into the data registers.
-		 *           The temperature and pressure result registers are updated together at the same time
-		 *           at the end of the measurement. IIR filter output resolution is 20 bits. The result
-		 *           registers are reset to value 0x80000 when the temperature and/or pressure measurements
-		 *           have been skipped (osrs_x=”000‟). The appropriate filter memory is kept unchanged
-		 *           (the value from the last measurement is kept). When the appropriate OSRS register is
-		 *           set back to nonzero, then the first value stored to the result registers are filtered. 
+		 * IIR filter applies to temperature and pressure data but not to humidity and gas data.
+		 * The data coming from the ADC are filtered and then loaded into the data registers.
+		 * The temperature and pressure result registers are updated together at the same time
+		 * at the end of the measurement. IIR filter output resolution is 20 bits. The result
+		 * registers are reset to value 0x80000 when the temperature and/or pressure measurements
+		 * have been skipped (osrs_x=”000‟). The appropriate filter memory is kept unchanged
+		 * (the value from the last measurement is kept). When the appropriate OSRS register is
+		 * set back to nonzero, then the first value stored to the result registers are filtered.
 		 */
 		struct filter
 		{
@@ -224,8 +224,8 @@ public:
 	/*
 	 * REG Ctrl_meas:
 	 * 5.3.1.3 Select sensor power mode
-	 *       5.3.2.2 Temperature oversampling settings
-	 *       5.3.2.3 Pressure oversampling settings 
+	 * 5.3.2.2 Temperature oversampling settings
+	 * 5.3.2.3 Pressure oversampling settings
 	 */
 	struct Ctrl_meas
 	{
@@ -290,7 +290,7 @@ public:
 	/*
 	 * REG Ctrl_hum:
 	 * 5.3.1.1 SPI 3 wire interrupt enable
-	 *       5.3.2.1 Controls over sampling setting of humidity sensor 
+	 * 5.3.2.1 Controls over sampling setting of humidity sensor
 	 */
 	struct Ctrl_hum
 	{
@@ -305,7 +305,7 @@ public:
 		/* Bits spi_3w_int_en: */
 		/*
 		 * New data interrupt can be enabled if the device is in SPI 3 wire mode and pi_3w_int_en=1.
-		 *         The new data interrupt is then indicated on the SDO pad. 
+		 * The new data interrupt is then indicated on the SDO pad.
 		 */
 		struct spi_3w_int_en
 		{
@@ -355,7 +355,7 @@ public:
 	/*
 	 * REG Ctrl_gas_1:
 	 * 5.3.3.5 Heater profile selection
-	 *       5.3.3.6 Run Gas 
+	 * 5.3.3.6 Run Gas
 	 */
 	struct Ctrl_gas_1
 	{
@@ -404,7 +404,7 @@ public:
 	
 	/*
 	 * REG Ctrl_gas_0:
-	 * 5.3.3.4 Heater off 
+	 * 5.3.3.4 Heater off
 	 */
 	struct Ctrl_gas_0
 	{
@@ -455,8 +455,8 @@ public:
 	/*
 	 * REG Gas_wait_9:
 	 * 5.3.3.3 Gas Sensor wait time
-	 *       The time between the beginning of the heat phase and the start of gas sensor resistance
-	 *       conversion depends on gas_wait_x setting as mentioned below. 
+	 * The time between the beginning of the heat phase and the start of gas sensor resistance
+	 * conversion depends on gas_wait_x setting as mentioned below.
 	 */
 	struct Gas_wait_9
 	{
@@ -503,7 +503,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_8:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_8
 	{
@@ -550,7 +550,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_7:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_7
 	{
@@ -597,7 +597,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_6:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_6
 	{
@@ -644,7 +644,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_5:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_5
 	{
@@ -691,7 +691,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_4:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_4
 	{
@@ -738,7 +738,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_3:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_3
 	{
@@ -785,7 +785,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_2:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_2
 	{
@@ -832,7 +832,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_1:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_1
 	{
@@ -879,7 +879,7 @@ public:
 	
 	/*
 	 * REG Gas_wait_0:
-	 * 5.3.3.3 Gas Sensor wait time 
+	 * 5.3.3.3 Gas Sensor wait time
 	 */
 	struct Gas_wait_0
 	{
@@ -926,7 +926,7 @@ public:
 	
 	/*
 	 * REG Res_heat_9:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_9
 	{
@@ -962,7 +962,7 @@ public:
 	
 	/*
 	 * REG Res_heat_8:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_8
 	{
@@ -998,7 +998,7 @@ public:
 	
 	/*
 	 * REG Res_heat_7:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_7
 	{
@@ -1034,7 +1034,7 @@ public:
 	
 	/*
 	 * REG Res_heat_6:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_6
 	{
@@ -1070,7 +1070,7 @@ public:
 	
 	/*
 	 * REG Res_heat_5:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_5
 	{
@@ -1106,7 +1106,7 @@ public:
 	
 	/*
 	 * REG Res_heat_4:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_4
 	{
@@ -1142,7 +1142,7 @@ public:
 	
 	/*
 	 * REG Res_heat_3:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_3
 	{
@@ -1178,7 +1178,7 @@ public:
 	
 	/*
 	 * REG Res_heat_2:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_2
 	{
@@ -1214,7 +1214,7 @@ public:
 	
 	/*
 	 * REG Res_heat_1:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_1
 	{
@@ -1250,7 +1250,7 @@ public:
 	
 	/*
 	 * REG Res_heat_0:
-	 * 5.3.3.2 Target heater resistance 
+	 * 5.3.3.2 Target heater resistance
 	 */
 	struct Res_heat_0
 	{
@@ -1287,15 +1287,15 @@ public:
 	/*
 	 * REG Idac_heat_9:
 	 * 5.3.3.1 Heater current
-	 *       BME680 contains a heater control block that will inject enough current into the heater
-	 *       resistance to achieve the requested heater temperature. There is a control loop which
-	 *       periodically measures heater resistance value and adapts the value of current injected
-	 *       from a DAC.
-	 *       The heater operation could be speeded up by setting an initial heater current for a target
-	 *       heater temperature by using register idac_heat_x<7:0>. This step is optional since the control
-	 *       loop will find the current after a few iterations anyway. The current injected to the heater in
-	 *       mA can be calculated by: (idac_heat_7_1 + 1) / 8, where idac_heat_7_1 is the decimal value
-	 *       stored in idac_heat<7:1> (unsigned, value from 0 to 127). 
+	 * BME680 contains a heater control block that will inject enough current into the heater
+	 * resistance to achieve the requested heater temperature. There is a control loop which
+	 * periodically measures heater resistance value and adapts the value of current injected
+	 * from a DAC.
+	 * The heater operation could be speeded up by setting an initial heater current for a target
+	 * heater temperature by using register idac_heat_x<7:0>. This step is optional since the control
+	 * loop will find the current after a few iterations anyway. The current injected to the heater in
+	 * mA can be calculated by: (idac_heat_7_1 + 1) / 8, where idac_heat_7_1 is the decimal value
+	 * stored in idac_heat<7:1> (unsigned, value from 0 to 127).
 	 */
 	struct Idac_heat_9
 	{
@@ -1331,7 +1331,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_8:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_8
 	{
@@ -1367,7 +1367,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_7:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_7
 	{
@@ -1403,7 +1403,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_6:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_6
 	{
@@ -1439,7 +1439,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_5:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_5
 	{
@@ -1475,7 +1475,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_4:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_4
 	{
@@ -1511,7 +1511,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_3:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_3
 	{
@@ -1547,7 +1547,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_2:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_2
 	{
@@ -1583,7 +1583,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_1:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_1
 	{
@@ -1619,7 +1619,7 @@ public:
 	
 	/*
 	 * REG Idac_heat_0:
-	 * 5.3.3.1 Heater current 
+	 * 5.3.3.1 Heater current
 	 */
 	struct Idac_heat_0
 	{
@@ -1656,9 +1656,9 @@ public:
 	/*
 	 * REG gas_r_lsb:
 	 * 5.3.4.5 Gas resistance range
-	 *       5.3.4.4 Gas resistance data
-	 *       5.3.5.5 Gas valid status
-	 *       5.3.5.6 Heater Stability Status 
+	 * 5.3.4.4 Gas resistance data
+	 * 5.3.5.5 Gas valid status
+	 * 5.3.5.6 Heater Stability Status
 	 */
 	struct gas_r_lsb
 	{
@@ -1674,10 +1674,10 @@ public:
 		/* Bits gas_valid_r: */
 		/*
 		 * Gas valid bit
-		 *           In each TPHG sequence contains a gas measurement slot, either a real one which
-		 *           result is used or a dummy one to keep a constant sampling rate and predictable
-		 *           device timing. A real gas conversion (i.e., not a dummy one) is indicated by the
-		 *           gas_valid_r status register. 
+		 * In each TPHG sequence contains a gas measurement slot, either a real one which
+		 * result is used or a dummy one to keep a constant sampling rate and predictable
+		 * device timing. A real gas conversion (i.e., not a dummy one) is indicated by the
+		 * gas_valid_r status register.
 		 */
 		struct gas_valid_r
 		{
@@ -1721,7 +1721,7 @@ public:
 	
 	/*
 	 * REG gas_r_msb:
-	 * 5.3.4.4 Gas resistance data 
+	 * 5.3.4.4 Gas resistance data
 	 */
 	struct gas_r_msb
 	{
@@ -1757,7 +1757,7 @@ public:
 	
 	/*
 	 * REG hum_lsb:
-	 * 5.3.4.3 Humidity data 
+	 * 5.3.4.3 Humidity data
 	 */
 	struct hum_lsb
 	{
@@ -1793,7 +1793,7 @@ public:
 	
 	/*
 	 * REG hum_msb:
-	 * 5.3.4.3 Humidity data 
+	 * 5.3.4.3 Humidity data
 	 */
 	struct hum_msb
 	{
@@ -1829,7 +1829,7 @@ public:
 	
 	/*
 	 * REG temp_xlsb:
-	 * 5.3.4.2 Temp data 
+	 * 5.3.4.2 Temp data
 	 */
 	struct temp_xlsb
 	{
@@ -1838,7 +1838,7 @@ public:
 		/* Bits temp_xlsb: */
 		/*
 		 * Contains the XLSB part [3:0] of the raw temperature measurement output data.
-		 *           Contents depend on temperature resolution controlled by oversampling setting. 
+		 * Contents depend on temperature resolution controlled by oversampling setting.
 		 */
 		struct temp_xlsb_
 		{
@@ -1874,7 +1874,7 @@ public:
 	
 	/*
 	 * REG temp_lsb:
-	 * 5.3.4.2 Temp data 
+	 * 5.3.4.2 Temp data
 	 */
 	struct temp_lsb
 	{
@@ -1910,7 +1910,7 @@ public:
 	
 	/*
 	 * REG temp_msb:
-	 * 5.3.4.2 Temp data 
+	 * 5.3.4.2 Temp data
 	 */
 	struct temp_msb
 	{
@@ -1946,7 +1946,7 @@ public:
 	
 	/*
 	 * REG press_xlsb:
-	 * 5.3.4.1 Pressure data 
+	 * 5.3.4.1 Pressure data
 	 */
 	struct press_xlsb
 	{
@@ -1955,7 +1955,7 @@ public:
 		/* Bits press_xlsb: */
 		/*
 		 * Contains the XLSB part [3:0] of the raw pressure measurement output data.
-		 *           Contents depend on pressure resolution controlled by oversampling setting. 
+		 * Contents depend on pressure resolution controlled by oversampling setting.
 		 */
 		struct press_xlsb_
 		{
@@ -1991,7 +1991,7 @@ public:
 	
 	/*
 	 * REG press_lsb:
-	 * 5.3.4.1 Pressure data 
+	 * 5.3.4.1 Pressure data
 	 */
 	struct press_lsb
 	{
@@ -2027,7 +2027,7 @@ public:
 	
 	/*
 	 * REG press_msb:
-	 * 5.3.4.1 Pressure data 
+	 * 5.3.4.1 Pressure data
 	 */
 	struct press_msb
 	{
@@ -2064,9 +2064,9 @@ public:
 	/*
 	 * REG meas_status_0:
 	 * 5.3.5.1 New data status
-	 *       5.3.5.2 Gas measuring status
-	 *       5.3.5.3 Measuring status
-	 *       5.3.5.4 Gas Measurement Index 
+	 * 5.3.5.2 Gas measuring status
+	 * 5.3.5.3 Measuring status
+	 * 5.3.5.4 Gas Measurement Index
 	 */
 	struct meas_status_0
 	{
@@ -2075,8 +2075,8 @@ public:
 		/* Bits new_data_0: */
 		/*
 		 * New data flag
-		 *           The measured data are stored into the output data registers at the end
-		 *           of each TPHG conversion phase along with status flags and index of measurement. 
+		 * The measured data are stored into the output data registers at the end
+		 * of each TPHG conversion phase along with status flags and index of measurement.
 		 */
 		struct new_data_0
 		{
@@ -2086,10 +2086,10 @@ public:
 		/* Bits gas_measuring: */
 		/*
 		 * Gas measuring status flag
-		 *           Measuring bit is set to “1‟ only during gas measurements, goes to “0‟ as soon as
-		 *           measurement is completed and data transferred to data registers. The registers storing
-		 *           the configuration values for the measurement (gas_wait_shared, gas_wait_x, res_heat_x,
-		 *           idac_heat_x, image registers) should not be changed when the device is measuring. 
+		 * Measuring bit is set to “1‟ only during gas measurements, goes to “0‟ as soon as
+		 * measurement is completed and data transferred to data registers. The registers storing
+		 * the configuration values for the measurement (gas_wait_shared, gas_wait_x, res_heat_x,
+		 * idac_heat_x, image registers) should not be changed when the device is measuring.
 		 */
 		struct gas_measuring
 		{
@@ -2099,9 +2099,9 @@ public:
 		/* Bits measuring: */
 		/*
 		 * Measuring status flag
-		 *           Measuring status will be set to ‘1’ whenever a conversion (temperature, pressure,
-		 *           humidity and gas) is running and back to ‘0’ when the results have been transferred
-		 *           to the data registers. 
+		 * Measuring status will be set to ‘1’ whenever a conversion (temperature, pressure,
+		 * humidity and gas) is running and back to ‘0’ when the results have been transferred
+		 * to the data registers.
 		 */
 		struct measuring
 		{
@@ -2117,10 +2117,10 @@ public:
 		/* Bits gas_meas_index_0: */
 		/*
 		 * Gas measurement index
-		 *           User can program a sequence of up to 10 conversions by setting nb_conv<3:0>.
-		 *           Each conversion has its own heater resistance target but 3 field registers to store
-		 *           conversion results. The actual gas conversion number in the measurement sequence
-		 *           (up to 10 conversions numbered from 0 to 9) is stored in gas_meas_index register. 
+		 * User can program a sequence of up to 10 conversions by setting nb_conv<3:0>.
+		 * Each conversion has its own heater resistance target but 3 field registers to store
+		 * conversion results. The actual gas conversion number in the measurement sequence
+		 * (up to 10 conversions numbered from 0 to 9) is stored in gas_meas_index register.
 		 */
 		struct gas_meas_index_0
 		{
